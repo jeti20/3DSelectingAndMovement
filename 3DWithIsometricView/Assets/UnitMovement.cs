@@ -10,10 +10,23 @@ public class UnitMovement : MonoBehaviour
     NavMeshAgent myAgent;
     public LayerMask groud;
 
+    public float speed;
+    public float agility;
+    public float endurance;
+
+
     private void Start()
     {
+        //mouse click movement
         myCam = Camera.main;
         myAgent = GetComponent<NavMeshAgent>();
+
+        // random stat
+        speed = Random.Range(0.1f, 1f);
+        agility = Random.Range(1f, 3f);
+        endurance = Random.Range(1f, 3f);
+
+        enabled = false;
     }
 
     private void Update()
@@ -29,4 +42,5 @@ public class UnitMovement : MonoBehaviour
             }
         }
     }
+
 }

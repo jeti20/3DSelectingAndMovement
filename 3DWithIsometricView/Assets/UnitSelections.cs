@@ -30,25 +30,13 @@ public class UnitSelections : MonoBehaviour
 
     public void ClickSelect(GameObject unitToAdd)
     {
-        DeselectAll();
+        Deselect();
         unitSelected.Add(unitToAdd);
         unitToAdd.transform.GetChild(0).gameObject.SetActive(true); // ON marker if it is selected
         unitToAdd.GetComponent<UnitMovement>().enabled = true; //if unit selected enable movement
     }
 
-    
-
-    public void DragSelect(GameObject unitToAdd)
-    {
-        if (!unitSelected.Contains(unitToAdd))
-        {
-            unitSelected.Add(unitToAdd);
-            unitToAdd.transform.GetChild(0).gameObject.SetActive(true); // ON marker if it is selected
-            unitToAdd.GetComponent<UnitMovement>().enabled = true; //if unit selected enable movement
-        }
-    }
-
-    public void DeselectAll()
+    public void Deselect()
     {
         foreach (var unit in unitSelected) 
         {
@@ -57,7 +45,9 @@ public class UnitSelections : MonoBehaviour
         }
         unitSelected.Clear();
     }
-    /*public float followSpeed = 5f;
+
+    //following
+    public float followSpeed = 5f;
     public float minDistance = 2f;
     void Update()
     {
@@ -83,5 +73,5 @@ public class UnitSelections : MonoBehaviour
                 }
             }
         }
-    }*/
+    }
 }
