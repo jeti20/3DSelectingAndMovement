@@ -33,20 +33,7 @@ public class UnitSelections : MonoBehaviour
         unitToAdd.GetComponent<UnitMovement>().enabled = true; //if unit selected enable movement
     }
 
-    public void ShiftClickSelect(GameObject unitToAdd) 
-    {
-        if (!unitSelected.Contains(unitToAdd))
-        {
-            unitSelected.Add(unitToAdd);
-            unitToAdd.transform.GetChild(0).gameObject.SetActive(true); // ON marker if it is selected
-            unitToAdd.GetComponent<UnitMovement>().enabled = true; //if unit selected enable movement
-        }
-        else
-        {
-            unitToAdd.transform.GetChild(0).gameObject.SetActive(false); //OFF marker if it isv not selected
-            unitSelected.Remove(unitToAdd);
-        }
-    }
+    
 
     public void DragSelect(GameObject unitToAdd)
     {
@@ -65,12 +52,6 @@ public class UnitSelections : MonoBehaviour
             unit.GetComponent<UnitMovement>().enabled = false; //if unit selected diseable movement
             unit.transform.GetChild(0).gameObject.SetActive(false);
         }
-
         unitSelected.Clear();
-    }
-
-    public void Deselect(GameObject unitToDeselect)
-    {
-
     }
 }

@@ -1412,7 +1412,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24187860285816c4c865fb6498f375d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myCam: {fileID: 0}
   boxVisual: {fileID: 854421537}
+  selectionBox:
+    x: 0
+    y: 0
+    width: 0
+    height: 0
+  startPosition: {x: 0, y: 0}
+  endPosition: {x: 0, y: 0}
 --- !u!1 &1005945532
 GameObject:
   m_ObjectHideFlags: 0
@@ -1431,7 +1439,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1005945533
 MonoBehaviour:
   m_ObjectHideFlags: 0
