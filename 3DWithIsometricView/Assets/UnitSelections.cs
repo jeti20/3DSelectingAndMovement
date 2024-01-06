@@ -62,7 +62,7 @@ public class UnitSelections : MonoBehaviour
     {
         foreach (var unit in unitSelected) 
         {
-            unit.GetComponent<UnitMovement>().enabled = true; //if unit selected diseable movement
+            unit.GetComponent<UnitMovement>().enabled = false; //if unit selected diseable movement
             unit.transform.GetChild(0).gameObject.SetActive(false);
         }
 
