@@ -4,11 +4,10 @@ using UnityEngine.Timeline;
 
 public class UnitSelections : MonoBehaviour
 {
-    public List<GameObject> unitList = new List<GameObject>();
-    public List<GameObject> unitSelected = new List<GameObject>();
-
+    #region SINGLETON
     private static UnitSelections _instance;
     public static UnitSelections Instance {  get { return _instance; } }
+
 
     private void Awake()
     {
@@ -24,6 +23,10 @@ public class UnitSelections : MonoBehaviour
             _instance = this;
         }
     }
+    #endregion
+
+    public List<GameObject> unitList = new List<GameObject>();
+    public List<GameObject> unitSelected = new List<GameObject>();
 
     public void ClickSelect(GameObject unitToAdd)
     {
@@ -54,4 +57,31 @@ public class UnitSelections : MonoBehaviour
         }
         unitSelected.Clear();
     }
+    /*public float followSpeed = 5f;
+    public float minDistance = 2f;
+    void Update()
+    {
+        if (unitList.Count > 0 && unitSelected.Count > 0)
+        {
+            foreach (var unit in unitList)
+            {
+                if (!unitSelected.Contains(unit))
+                {
+                    Vector3 targetPosition = unitSelected[0].transform.position;
+                    Vector3 direction = targetPosition - unit.transform.position;
+
+                    if (direction.magnitude < minDistance)
+                    {
+                        Vector3 avoidDirection = unit.transform.position - targetPosition;
+                        avoidDirection.Normalize();
+                        unit.transform.position += avoidDirection * followSpeed * Time.deltaTime;
+                    }
+                    else
+                    {
+                        unit.transform.position = Vector3.MoveTowards(unit.transform.position, targetPosition, followSpeed * Time.deltaTime);
+                    }
+                }
+            }
+        }
+    }*/
 }
