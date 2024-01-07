@@ -1,10 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //Adding and removing units with this script from unitList
+
     void Start()
     {
         UnitSelections.Instance.unitList.Add(this.gameObject);
