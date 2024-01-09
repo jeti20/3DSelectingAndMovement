@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -10,7 +9,6 @@ public class UnitMovementOnClick : MonoBehaviour
 
     private void Start()
     {
-        //mouse click movement
         myCam = Camera.main;
         myAgent = GetComponent<NavMeshAgent>();
     }
@@ -24,6 +22,14 @@ public class UnitMovementOnClick : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, groud))
             {
+                // reference to speed from RandomStats
+                RandomStats randomStats = GetComponent<RandomStats>();
+                if (randomStats != null)
+                {
+                    myAgent.speed = randomStats.speed;
+                }
+
+                //set destination after click
                 myAgent.SetDestination(hit.point);
             }
         }
