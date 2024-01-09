@@ -23,6 +23,11 @@ public class RandomStats : MonoBehaviour
 
     private void Update()
     {
+        Following();
+    }
+
+    private void Following()
+    {
         if (UnitSelections.Instance.unitSelected.Count > 0)
         {
             GameObject selectedUnit = UnitSelections.Instance.unitSelected[0];
@@ -41,14 +46,14 @@ public class RandomStats : MonoBehaviour
 
                     // Move to the target unit (unitSelected)
                     transform.position = Vector3.MoveTowards(transform.position, targetPosition, currentSpeed);
-                    endurance = Mathf.Clamp(endurance - Time.deltaTime, 0, originalEndurance); // reducing endurane [0, originalEndurance]
+                    endurance = Mathf.Clamp(endurance - Time.deltaTime, 0, originalEndurance); // reducing endurane
                     // Added this because before when player changed the selected unit, the unit that became not selected was not following the new selected obj, some blue arrow showed the opposite direction, some kind of force
                     if (this != selectedUnit)
                     {
                         NavMeshAgent navMeshAgent = GetComponent<NavMeshAgent>();
                         navMeshAgent.ResetPath();
                     }
-                }              
+                }
             }
             else
             {
@@ -62,7 +67,7 @@ public class RandomStats : MonoBehaviour
                 {
                     canMove = false;
                 }
-                
+
                 endurance = Mathf.Clamp(endurance + Time.deltaTime * regenerationSpeed, 0, originalEndurance);
             }
         }

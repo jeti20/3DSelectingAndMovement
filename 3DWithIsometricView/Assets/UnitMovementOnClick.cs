@@ -15,6 +15,11 @@ public class UnitMovementOnClick : MonoBehaviour
 
     private void Update()
     {
+        MovementOnClick();
+    }
+
+    private void MovementOnClick()
+    {
         if (Input.GetMouseButtonDown(1))
         {
             RaycastHit hit;
