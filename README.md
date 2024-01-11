@@ -9,4 +9,4 @@ functions:
 YouTube Video: https://youtu.be/wbqQT3ac4c8
 
 ![](https://github.com/jeti20/3DSelectingAndMovement/blob/main/Media/1.PNG)
-![](https://github.com/jeti20/3DSelectingAndMovement/blob/main/Media/2.PNG)
+![](https://github.com/jeti20/3DSelectingAndMovement/blob/main/Media/2.png)
